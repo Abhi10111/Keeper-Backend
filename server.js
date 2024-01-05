@@ -14,6 +14,11 @@ app.post("/new-note", (req, res) => {
   fs.writeFile("notes.txt", JSON.stringify(req.body), (err) => {});
   res.status(204).send();
 });
+app.get("/", (req, res) => {
+  fs.readFile("notes.txt", "utf8", (err, data) => {
+    res.send(data);
+  });
+});
 app.get("/notes", (req, res) => {
   fs.readFile("notes.txt", "utf8", (err, data) => {
     res.send(data);
