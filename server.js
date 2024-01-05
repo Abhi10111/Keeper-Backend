@@ -15,7 +15,7 @@ app.post("/new-note", (req, res) => {
   res.status(204).send();
 });
 app.get("/", (req, res) => {
-  res.send("data");
+  res.send("Backend is working correctly");
 });
 app.get("/notes", (req, res) => {
   fs.readFile("notes.txt", "utf8", (err, data) => {
