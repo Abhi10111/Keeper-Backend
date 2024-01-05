@@ -10,7 +10,7 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-app.post("/new-note", (req, res) => {
+app.post("/updateNotes", (req, res) => {
   fs.writeFile("notes.txt", JSON.stringify(req.body), (err) => {});
   res.status(204).send();
 });
